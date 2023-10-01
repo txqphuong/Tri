@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <box-icon name='up-arrow-alt'></box-icon>
+    
+    <title>VKGC Shop</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <style>
+        body{
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-image: url(./BGC3.png); */
+    background-color: #ADC4CE;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.sale{
+    color: yellow;
+    }
+    h4{
+    font-size: 18px; 
+    color: #111;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: #ff0000;
+    }
+.nav{
+    background-color: #96B6C5;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    padding: 15px;
+    position: relative; /* Thêm dòng này để định vị trí tương đối */
+    z-index: 2; /* Đảm bảo nav hiển thị phía trên sidebar */
+}
+.video{
+    margin-top: 0px;
+    padding-top: 0px;
+    display: block;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 0; /* Không cần margin-top nữa */
+    margin-left: 150px; /* Đảm bảo nội dung không bị che bởi sidebar */
+    transition: margin-left 0.5s;
+    margin-top: 60px; /* Để tạo khoảng cách từ trên cùng của container để tránh che tiêu đề */
+    margin-left: 150px; /* Đảm bảo nội dung không bị che bởi sidebar */
+    transition: margin-left 0.5s, margin-top 0.5s; /* Thêm margin-top vào transition để có hiệu ứng mượt hơn */
+}
+.content {
+    flex: 1;
+    display: flex;
+}
+
+
+
+
+.nav-Item{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+}
+
+.nav-Item:hover{
+    background-color: #44565e;
+    filter: opacity(50%);
+    color: black;
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 14px;
+    line-height: 1.15;
+    color: #111;
+}
+.sidebar{
+    background-color: #8ba4af;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto; /* Sử dụng thanh cuộn nếu nội dung vượt quá chiều cao */
+    z-index: 1; /* Đảm bảo sidebar nằm phía dưới nav */
+    transition: width 0.5s;
+    padding-top: 60px; /* Để giữ khoảng cách từ trên cùng của sidebar để tránh che tiêu đề */
+    z-index: 1; /* Đảm bảo sidebar nằm phía dưới nav */
+    transition: width 0.5s, padding-top 0.5s; /* Thêm padding-top vào transition để có hiệu ứng mượt hơn */
+    color: #111;
+    
+}
+.navsidebar{
+    font-size: 8px; 
+    color: #111;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: 5px solid #8ba4af;
+    display: inline-block;
+    color: #111;
+    font-weight: 300;
+    margin: 10px 10px;
+    filter: opacity(70%);
+}
+.navsidebar:hover{
+    background-color: #96B6C5;
+    filter: opacity(50%);
+    color: black;
+}
+    
+    
+
+
+.sidebar h3 {
+    font-size: 18px;
+    color: #fff;
+    padding: 15px 20px; /* Điều chỉnh khoảng cách padding để tránh che tiêu đề */
+}
+
+#wrapper{
+    max-width: 1170px;
+    margin: 0 auto;
+
+
+}
+.headline{
+    text-align: center;
+    margin: 0px 0px;
+
+}
+h3{
+    font-size: 18px; 
+    color: #111;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 5px solid #ADC4CE;
+    display: inline-block;
+    color: #555;
+    font-weight: 600;
+}
+ul.products{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    
+}
+ul.products li{
+    flex-basis: 20%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+ul.products li img{
+    max-width: 100%;
+    height: auto;
+}
+ul.products li .product-top{
+    position: relative;
+    overflow: hidden;
+}
+ul.products li .product-top .product-thumb{
+    display: block;
+}
+ul.products li:hover .product-top .product-thumb img {
+    filter: opacity(50%);
+    
+}
+ul.products li .product-top .product-thumb img{
+    display: block;
+}
+ul.products li .product-top a.buy-now{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: #fff;
+    padding: 5px 0px;
+    position: absolute;
+    bottom: -36px;
+    width: 68%;
+    transition: 0.25s ease-in-out;
+    opacity: 0.85;
+}
+ul.products li:hover a.buy-now{
+    bottom: 0px;
+}
+ul.products li .product-info{
+    padding: 10px 0px;
+}
+ul.products li .product-info a{
+    display: block;
+    text-decoration: none;
+
+}
+ul.products li .product-info a.product-cat{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    padding: 3px 0px;
+}
+ul.products li .product-info a.product-name{
+    color: #61677A;
+    padding: 3px 0px;
+}
+ul.products li .product-info .product-price{
+    color: #111;
+    padding: 2px 0px;
+    font-weight: 600;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+.footer {
+    padding: 50px;
+    background-color: #0d1b27;
+    color: #4477CE;
+    text-align: center;
+    flex-shrink: 0; /* Không cho footer co lại khi nội dung ít */
+    filter: opacity(90%);
+    
+
+    
+}
+a{
+    text-align: left ;
+    text-decoration: none;
+    color: #8CABFF;
+    
+}
+.thongtin a:hover{
+    background-color: rgb(198, 170, 233);
+    filter: opacity(50%);
+    color: black;
+}
+#backtop{
+    width: 50px;
+    height: 50px;
+    background-color: #4477CE;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+}
+
+    </style>
+    <script src="./index.js"></script>
+    <div class="nav">
+        <a href="./index.html" class="nav-Item"><i class='bx bxs-home-alt-2'></i>Home</a>
+        <a href="#" class="nav-Item"><i class='bx bxs-info-circle' ></i>About</a>
+        <a href="https://www.facebook.com/TuoitreP1Q10" class="nav-Item"><i class='bx bxs-user-rectangle'></i>Members</a>
+        <a href="#" class="nav-Item"><i class='bx bxs-message-square-dots' ></i>Contact</a>
+        <a href="./index.html" class="nav-Item"><i class='bx bxs-arrow-from-right'></i>Quay Về</a>
+    
+        </div> 
+    <div class="container">
+        <div class="content">
+            <div class="wrapper">
+        <div class="headline">
+           
+            <img src="./banhh.gif" alt=""><h3>Sản Phẩm Trên 500 Coin</h3><img src="./banhh.gif" alt="">
+            <h4><img src="./giff.gif" alt=""><i class='bx bxs-paper-plane'></i>Nhân dịp Trung Thu shop xin giảm giá những sản phẩm đẹp và tiên tiến nhất trong <a href="./indexsale.html"class="sale">Xe Đang sale</a>!!!<i class='bx bxs-paper-plane'></i><img src="./giff.gif" alt=""></h4>
+
+        </div>
+        <ul class="products">
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Dubsta.jpg">
+                        </a>
+                        <a href="" class="buy-now">Đăng Ký</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">SUV</a>
+                        <a href="" class="product-name">Dubsta</a>
+                        <div class="product-price">5000 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Hot Rod Blazer.jpg">
+                        </a>
+                        <a href="" class="buy-now">Đăng Ký</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">V.I.P</a>
+                        <a href="" class="product-name">Hot Rod Blazer</a>
+                        <div class="product-price">1000 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./sIEEU xE/Tempesta.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Siêu Xe</a>
+                        <a href="" class="product-name">Tempesta</a>
+                        <div class="product-price">790 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./sIEEU xE/Turismo R.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Siêu Xe</a>
+                        <a href="" class="product-name">Turismo-SALE 30%</a>
+                        <div class="product-price">590 Coin còn 413 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./sIEEU xE/Vacca.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Siêu Xe</a>
+                        <a href="" class="product-name">Vacca</a>
+                        <div class="product-price">490 Coin</div>
+                    </div>
+                </div>
+            </li> -->
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./sIEEU xE/X80 Proto.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Siêu Xe</a>
+                        <a href="" class="product-name">X80 Proto-SALE 40%</a>
+                        <div class="product-price">990 Coin còn 594 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./sIEEU xE/Zentorno.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Siêu Xe</a>
+                        <a href="" class="product-name">Zentorno</a>
+                        <div class="product-price">990 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./The thao co dien/Fränken Stange.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao Cổ Điển</a>
+                        <a href="" class="product-name">Franken Stange-SALE 20%</a>
+                        <div class="product-price">990 Coin còn 792 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./The thao co dien/Mamba.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao Cổ Điển</a>
+                        <a href="" class="product-name">Mamba</a>
+                        <div class="product-price">490 Coin</div>
+                    </div>
+                </div>
+            </li> -->
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./The thao co dien/Roosevelt Valor.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao Cổ Điển</a>
+                        <a href="" class="product-name">Roosevelt-SALE 20%</a>
+                        <div class="product-price">790 Coin còn 632 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./The thao co dien/Tornado Custom.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao Cổ Điển</a>
+                        <a href="" class="product-name">Tornado Custom</a>
+                        <div class="product-price">490 Coin</div>
+                    </div>
+                </div>
+            </li> -->
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./The thao co dien/Z-Type.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao Cổ Điển</a>
+                        <a href="" class="product-name">Z-Type-SALE 50%</a>
+                        <div class="product-price">890 Coin còn 445 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Theer Tao/Kuruma.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể thao</a>
+                        <a href="" class="product-name">Kuruma</a>
+                        <div class="product-price">490 Coin</div>
+                    </div>
+                </div>
+            </li> -->
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Theer Tao/Drift Tampa.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao</a>
+                        <a href="" class="product-name">Drift Tampa-SALE 20%</a>
+                        <div class="product-price">790 Coin còn 632 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <!-- <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Theer Tao/Massacro (Racecar).jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể Thao</a>
+                        <a href="" class="product-name">Massacro</a>
+                        <div class="product-price">490 Coin</div>
+                    </div>
+                </div>
+            </li> -->
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Theer Tao/Omnis.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể thao</a>
+                        <a href="" class="product-name">Omnis-SALE 15%</a>
+                        <div class="product-price">790 Coin còn 671 Coin</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="product-item">
+                    <div class="product-top">
+                        <a href="" class="producthumb">
+                            <img src="./Theer Tao/Specter Custom.jpg">
+                        </a>
+                        <a href="" class="buy-now">Mua Ngay</a>
+                    </div>
+                    <div class="product-info">
+                        <a href="" class="product-cat">Thể thao</a>
+                        <a href="" class="product-name">Specter Custom-SALE 20%</a>
+                        <div class="product-price">790 Coin còn 632 Coin</div>
+                    </div>
+                </div>
+            </li>
+           
+        </ul>
+
+
+            </div>
+            <div class="wp-content" class="clearfix">
+            <div class="sidebar">
+                    <h2>Danh mục</h2>
+                    <ul id="main-nav">
+                        <li><a href="./index.html" class="navsidebar"><b>Tất Cả Xe<i class='bx bxs-car'></i></b></a></li>
+                        <li><a href="" class="navsidebar"><b>Xe Đang Sale<i class='bx bxs-car'></i></b></a></li>
+                        <li><a href="./index500.html" class="navsidebar"><b>Xe dưới 500 Coin<i class='bx bxs-car'></i></b></a></li>
+                        <li><a href="" class="navsidebar"><b>Xe Trên 500 Coin<i class='bx bxs-car'></i></b></a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>Thông Tin Liên Hệ</h2>
+        <div class="thongtin">
+            <li><a href="" ><i class='bx bxs-phone'></i>Hotline: 0123456789<i class='bx bxs-phone'></i> </a></li>
+            <li><a href="https://www.facebook.com/ace.phu.7758" ><i class='bx bxl-facebook-circle'></i>Facebook liên hệ: Châu Trí<i class='bx bxl-facebook-circle'></i> </a></li>
+            <li><a href="" ><i class='bx bxs-chat'></i>Zalo liên hệ :0707611782<i class='bx bxs-chat'></i> </a></li>
+            <li><a href="https://www.instagram.com/ctriiiiii/"><i class='bx bxl-instagram-alt'></i>instagram liên hệ<i class='bx bxl-instagram-alt'></i> </a></li>
+             
+        </div>
+
+        
+        <div class="video">
+            <video autoplay muted loop style="width: 350px;height: 350px;">
+               <source src="./video xe.mp4" type="video/mp4">
+            </video> 
+          </div>
+        </div>
+        <div id="backtop">
+             <i class='bx bx-up-arrow-alt'></i>
+            
+        </div>
+
+    </div>
+    </div>
+    
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $(Window).scroll(function(){
+            if($(this).scrollTop()){
+                $('backtop').fadeIn();
+            }else{
+                $('backtop').fadeOut();
+
+            }
+        });
+        $("#backtop").click(function(){
+            $('html,body').animate({
+                scrollTop: 0
+            },1000);
+        });
+    });
+</script>
+</html>
+</html>

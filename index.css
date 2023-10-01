@@ -1,0 +1,285 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* background-image: url(./test3.jpg); */
+    background-color: #ADC4CE;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+ 
+
+.nav{
+    /* background-image: url(./nav4.png); */
+    background-color: #96B6C5;
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    padding: 15px;
+    position: relative; /* Thêm dòng này để định vị trí tương đối */
+    z-index: 2; /* Đảm bảo nav hiển thị phía trên sidebar */
+    border-radius: 30px;
+    /* color: #030303; */
+    box-shadow: 6px 5px 6px 6px rgba(0, 0, 0, 0.16);
+}
+.video{
+    margin-top: 0px;
+    padding-top: 0px;
+    display: block;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-top: 0; /* Không cần margin-top nữa */
+    margin-left: 150px; /* Đảm bảo nội dung không bị che bởi sidebar */
+    transition: margin-left 0.5s;
+    margin-top: 60px; /* Để tạo khoảng cách từ trên cùng của container để tránh che tiêu đề */
+    margin-left: 150px; /* Đảm bảo nội dung không bị che bởi sidebar */
+    transition: margin-left 0.5s, margin-top 0.5s; /* Thêm margin-top vào transition để có hiệu ứng mượt hơn */
+}
+.content {
+    flex: 1;
+    display: flex;
+}
+.phao{
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+.nav-Item{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+}
+
+.nav-Item:hover{
+    background-color:#44565e;
+    filter: opacity(50%);
+    color: black;
+    /* border-radius:20%; */
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-size: 14px;
+    line-height: 1.15;
+    color: #111;
+}
+.sidebar{
+    background-color: #8ba4af;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto; /* Sử dụng thanh cuộn nếu nội dung vượt quá chiều cao */
+    z-index: 1; /* Đảm bảo sidebar nằm phía dưới nav */
+    transition: width 0.5s;
+    padding-top: 60px; /* Để giữ khoảng cách từ trên cùng của sidebar để tránh che tiêu đề */
+    z-index: 1; /* Đảm bảo sidebar nằm phía dưới nav */
+    transition: width 0.5s, padding-top 0.5s; /* Thêm padding-top vào transition để có hiệu ứng mượt hơn */
+    color: #111;
+    /* border-radius: 30px; */
+    /* color: #030303; */
+    box-shadow: 4px 3px 4px 4px rgba(0, 0, 0, 0.16);
+    
+}
+.navsidebar{
+    font-size: 8px; 
+    color: #111;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    border: 5px solid #8ba4af;
+    display: inline-block;
+    color: #111;
+    font-weight: 300;
+    margin: 10px 10px;
+    filter: opacity(70%);
+
+}
+.navsidebar:hover{
+    background-color: #96B6C5;
+    filter: opacity(50%);
+    color: black;
+    
+    
+}
+    
+    
+
+
+.sidebar h3 {
+    font-size: 18px;
+    color: #fff;
+    padding: 15px 20px; /* Điều chỉnh khoảng cách padding để tránh che tiêu đề */
+}
+
+#wrapper{
+    max-width: 1170px;
+    margin: 0 auto;
+
+
+}
+.headline{
+    text-align: center;
+    margin: 0px 0px;
+
+}
+h3{
+    font-size: 18px; 
+    color: #111;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 5px solid #ADC4CE;
+    display: inline-block;
+    color: #555;
+    font-weight: 600;
+}
+.sale{
+    color: yellow;
+}
+h4{
+    font-size: 18px; 
+    color: #111;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    
+    
+    /* border: 5px solid #ADC4CE; */
+    
+    color: #ff0000;
+    
+}
+
+
+ul.products{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    
+}
+ul.products li{
+    flex-basis: 20%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+ul.products li img{
+    max-width: 100%;
+    height: auto;
+}
+ul.products li .product-top{
+    position: relative;
+    overflow: hidden;
+}
+ul.products li .product-top .product-thumb{
+    display: block;
+}
+ul.products li:hover .product-top .product-thumb img {
+    filter: opacity(50%);
+    
+}
+ul.products li .product-top .product-thumb img{
+    display: block;
+}
+ul.products li .product-top a.buy-now{
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #446084;
+    color: #fff;
+    padding: 5px 0px;
+    position: absolute;
+    bottom: -36px;
+    width: 68%;
+    transition: 0.25s ease-in-out;
+    opacity: 0.85;
+}
+ul.products li:hover a.buy-now{
+    bottom: 0px;
+}
+ul.products li .product-info{
+    padding: 10px 0px;
+}
+ul.products li .product-info a{
+    display: block;
+    text-decoration: none;
+
+}
+ul.products li .product-info a.product-cat{
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #706868;
+    padding: 3px 0px;
+}
+ul.products li .product-info a.product-name{
+    color: #61677A;
+    padding: 3px 0px;
+}
+ul.products li .product-info .product-price{
+    color: #111;
+    padding: 2px 0px;
+    font-weight: 600;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+.footer {
+    padding: 50px;
+    background-color: #0d1b27;
+    color: #4477CE;
+    text-align: center;
+    flex-shrink: 0; /* Không cho footer co lại khi nội dung ít */
+    filter: opacity(90%);
+    
+
+    
+}
+a{
+    text-align: left ;
+    text-decoration: none;
+    color: #8CABFF;
+    
+}
+.thongtin a:hover{
+    background-color: rgb(198, 170, 233);
+    filter: opacity(50%);
+    color: black;
+}
+#backtop{
+    width: 50px;
+    height: 50px;
+    /* background-color: #4477CE; */
+    background-image: url(./trong.jpg);
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    cursor: pointer;
+}

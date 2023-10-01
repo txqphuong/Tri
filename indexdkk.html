@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VKGC Shop</title>
+  <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif;
+}
+
+body {
+  background-image: url("./trung\ thu.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+}
+.video{
+ 
+  margin-top: 0px;
+  padding-top: 0px;
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+  padding-bottom: 5px;
+  padding-top: 0px;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: 22px;
+  padding-bottom: 2px;
+}
+
+input {
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid #007bff;
+  outline: none;
+  font-size: 18px;
+}
+
+input:focus {
+  background-color: #ffffff;
+}
+
+button {
+  width: 100%;
+  border: none;
+  font-size: 22px;
+  color: #ffff;
+  padding: 5px 0px;
+  margin: 10px 0px 25px 0px;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+.alert {
+  font-size: 19px;
+  cursor: pointer;
+  font-style: italic;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.box {
+  height: 600px;
+  width: 400px;
+  background-color: #ffff;
+  box-shadow: 6px 5px 6px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  padding: 3.5rem;
+  color: #030303;
+}
+
+.text-box {
+  padding: 14px 0px;
+}
+  </style>
+  <div class="container">
+    <div class="box-1">
+      <div class="video">
+            <video autoplay muted loop style="width: 850px;height: 850px;">
+               <source src="./video xe.mp4" type="video/mp4">
+            </video> 
+          </div>
+    </div>
+    <div class="box">
+     <h1> <img src="./banhdk.gif" alt="">Đăng ký<img src="./banhdk.gif" alt=""></h1>
+      <form id="registerForm">
+        <div class="text-box">
+          <h4>Họ và tên</h4>
+          <input type="text" placeholder="Tên đầy đủ của bạn" name="fullName" id="fullName">
+        </div>
+        <div class="text-box">
+          <h4>Email</h4>
+          <input type="text" placeholder="Email của bạn" name="registerEmail" id="registerEmail">
+        </div>
+        <div class="text-box">
+          <h4>Số điện thoại liên lạc</h4>
+          <input type="text" placeholder="Số điện thoại của bạn" name="registerPassword" id="registerPassword">
+        </div>
+        <div class="text-box">
+          <h4>Ngày muốn nhận xe nhất</h4>
+          <input type="date" placeholder="#" name="confirmPassword" id="confirmPassword">
+        </div>
+        <div class="text-box">
+          <button type="submit"><i class='bx bx-horizontal-right'></i>Đăng ký<i class='bx bx-horizontal-left' ></i></button>
+        </div>
+        
+      </form>
+    </div>  
+  </div>
+  <script>
+    // Biến đơn giản để lưu trữ thông tin đăng ký
+var registeredUsers = [];
+
+// Lắng nghe sự kiện "submit" của biểu mẫu đăng ký
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Ngăn trình duyệt gửi biểu mẫu một cách mặc định
+
+  // Lấy giá trị từ các trường input
+  var fullName = document.getElementById("fullName").value;
+  var email = document.getElementById("registerEmail").value;
+  var password = document.getElementById("registerPassword").value;
+  // var confirmPassword = document.getElementById("confirmPassword").value;
+
+  // // Kiểm tra xem mật khẩu đã nhập lại chính xác hay chưa
+  // if (password !== confirmPassword) {
+  //   alert("Mật khẩu nhập lại không khớp. Vui lòng kiểm tra lại.");
+  //   return;
+  // }
+
+  // Kiểm tra xem email đã tồn tại trong danh sách đăng ký chưa
+  // var userExists = registeredUsers.some(function(user) {
+  //   return user.email === email;
+  // });
+
+  // if (userExists) {
+  //   alert("Email đã tồn tại. Vui lòng sử dụng email khác.");
+  // } else {
+    // Nếu email chưa tồn tại, lưu thông tin đăng ký vào biến registeredUsers
+    var newUser = {
+      fullName: fullName,
+      email: email,
+      password: password
+    };
+    registeredUsers.push(newUser);
+  
+    alert(fullName+"\nĐăng ký xe thành công! Bạn sẽ nhận được xe trong thời gian sớm nhất. Xin Cảm Ơn!!!");
+    // Sau khi đăng ký thành công, bạn có thể thực hiện các hành động khác tùy ý
+  }
+);
+
+// Lắng nghe sự kiện "submit" của biểu mẫu đăng nhập
+// document.getElementById("loginForm").addEventListener("submit", function(event) {
+//   event.preventDefault(); // Ngăn trình duyệt gửi biểu mẫu một cách mặc định
+
+//   // Lấy giá trị từ các trường input
+//   var loginEmail = document.getElementById("loginEmail").value;
+//   var loginPassword = document.getElementById("loginPassword").value;
+
+//   // Kiểm tra xem email và mật khẩu nhập vào có trùng khớp
+//   var user = registeredUsers.find(function(user) {
+//     return user.email === loginEmail && user.password === loginPassword;
+//   });
+
+//   if (user) {
+//     // Nếu thông tin đăng nhập hợp lệ, bạn có thể thực hiện các hành động sau khi đăng nhập thành công
+//     alert("Đăng nhập thành công! Chào mừng " + user.fullName + "!");
+//   } else {
+//     alert("Email hoặc mật khẩu không đúng. Vui lòng kiểm tra lại.");
+//   }
+// });
+  </script>
+  <!-- <script src="./form.js"></script> -->
+</body>
+
+</html>
